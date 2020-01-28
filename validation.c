@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 int     ft_check_adjacency(const char *str)
@@ -99,4 +98,3 @@ int     ft_height(const char *str)
     }
     return (height);
 }
-
