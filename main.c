@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 int  ft_put_error(const char *str) 
@@ -19,7 +18,7 @@ int  ft_put_error(const char *str)
     return (-1);
 }
 
-int     main(char **argv, int argc)
+int     main(int argc, char **argv)
 {
     int     fd;
     t_list  *list;
@@ -27,9 +26,9 @@ int     main(char **argv, int argc)
     if (argc != 2)
         return (ft_put_error("usage: ./fillit input_file\n"));
     if (!(fd = open(argv[1], O_RDONLY)))
-        return (ft_put_error("error\n"));
-    if (!(ft_create_buffer(&list, fd)));
-        return (ft_put_error("error\n"));
-    
+        return (ft_put_error("error1\n"));
+    if (!(ft_create_buffer(&list, fd)))
+        return (ft_put_error("error2\n"));
+    return (0);
 
 }

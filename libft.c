@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 21:07:34 by cburns            #+#    #+#             */
-/*   Updated: 2020/01/29 00:32:06 by cburns           ###   ########.fr       */
+/*   Updated: 2020/01/30 09:16:54 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		ft_lstaddend(t_list **alst, t_list *new)
 {
 	t_list	*current;
 
-	if (!(alst))
+	if (!(*alst))
 		*alst = new;
 	else
 	{
@@ -109,4 +109,34 @@ void	ft_memdel(void **ap)
 		free(*ap);
 		*ap = NULL;
 	}
+}
+
+void				*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t			i;
+	unsigned char	*s1;
+	unsigned char	*s2;
+
+	if (!dest && !src && n)
+		return (NULL);
+	s1 = (unsigned char *)dest;
+	s2 = (unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	return (dest);
+}
+void	*ft_memset(void *dest, int c, size_t n)
+{
+	unsigned char	*sym;
+	size_t			i;
+
+	sym = (unsigned char *)dest;
+	i = 0;
+	while (i < n)
+		sym[i++] = (unsigned char)c;
+	return (dest);
 }

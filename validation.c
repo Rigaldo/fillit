@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/17 22:58:17 by cburns            #+#    #+#             */
-/*   Updated: 2020/01/17 22:58:17 by cburns           ###   ########.fr       */
+/*   Created: 2020/01/30 09:16:08 by cburns            #+#    #+#             */
+/*   Updated: 2020/01/30 09:16:08 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int     ft_check_adjacency(const char *str)
                 adj++;
             if (i > 0 && str[i - 1] == '#')
                 adj++;
-            if (i < 13 && str[i + 5] == '#')
+            if (i < 15 && str[i + 5] == '#')
                 adj++;
             if (i > 5 && str[i - 5] == '#')
                 adj++;
@@ -60,7 +60,7 @@ int         ft_check_figure(const char *str)
     if (dots != 12 || sharps != 4)
         return (0);
     adj = ft_check_adjacency(str);
-    if (adj != 6 || adj != 8)
+    if (adj != 6 && adj != 8)
         return (0);
     return (1);
 }

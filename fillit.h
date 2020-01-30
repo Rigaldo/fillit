@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 22:54:19 by cburns            #+#    #+#             */
-/*   Updated: 2020/01/29 00:32:14 by cburns           ###   ########.fr       */
+/*   Updated: 2020/01/30 09:16:36 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <fcntl.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -48,10 +50,13 @@ typedef struct      s_map
 int         ft_put_error(const char *str);
 
 int         ft_create_buffer(t_list **list, int fd);
-int         *ft_create_list(t_list **list, char *file, int ret);
+int         ft_create_list(t_list **list, char *file, int ret);
 int         ft_create_figure(char *file, char pos[21]);
-int         *ft_fulfil_struct(t_list **list);
+int         ft_fulfil_struct(t_list **list);
 t_point     *point_new(int x, int y);
+int     ft_create_elem(t_list *node);
+t_point     *ft_point_new(int x, int y);
+void	ft_minmax(char *str, t_point *min, t_point *max);
 
 int         ft_check_adjacency(const char *str);
 int         ft_check_figure(const char *str);
@@ -74,4 +79,6 @@ t_list		*ft_lstnew(void const *content, size_t content_size);
 void		ft_lstaddend(t_list **alst, t_list *new);
 char	    *ft_strncpy(char *dest, char const *s, size_t n);
 void	    ft_memdel(void **ap);
+void				*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memset(void *dest, int c, size_t n);
 #endif
