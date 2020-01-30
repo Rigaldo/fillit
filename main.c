@@ -14,21 +14,21 @@
 
 int  ft_put_error(const char *str) 
 {
-    ft_putstr_fd(str, 2);
-    return (-1);
+	ft_putstr_fd(str, 2);
+	return (-1);
 }
 
 int     main(int argc, char **argv)
 {
-    int     fd;
-    t_list  *list;
+	int     fd;
+	t_list  *list;
 
-    if (argc != 2)
-        return (ft_put_error("usage: ./fillit input_file\n"));
-    if (!(fd = open(argv[1], O_RDONLY)))
-        return (ft_put_error("error1\n"));
-    if (!(ft_create_buffer(&list, fd)))
-        return (ft_put_error("error2\n"));
-    return (0);
+	if (argc != 2)
+		return (ft_put_error("usage: ./fillit input_file\n"));
+	if (!(fd = open(argv[1], O_RDONLY)))
+		return (ft_put_error("error1\n"));
+	if (!(ft_create_buffer(&list, fd)))
+		return (ft_put_error("error2\n"));
+	return (0);
 
 }
